@@ -3,18 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerHit
+  - PlayerUse
+  - UsableCollider
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - UI (3D)
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Interactable
+  - Outline
+  - PlayerHit
+  - Player
   - 
   - 
   - 
