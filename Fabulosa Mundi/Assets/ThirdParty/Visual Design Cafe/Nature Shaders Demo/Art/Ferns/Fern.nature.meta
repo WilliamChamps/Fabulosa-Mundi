@@ -94,7 +94,7 @@ ScriptedImporter:
       _convertMaterials: 1
       _settings:
       - Id: Ferns
-        Shader: Hidden/InternalErrorShader
+        Shader: Universal Render Pipeline/Nature Shaders/Plant
         Type: 6
         Override: {fileID: 2100000, guid: c2909a8f783a27445af7c41d6e8b7499, type: 2}
         Wind: 1
@@ -108,7 +108,19 @@ ScriptedImporter:
         Textures: []
     _textureImportSettings:
       _convertTextures: 0
-      _settings: []
+      _settings:
+      - Id: Ferns - Albedo
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Ferns - Normal
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Ferns - Packed
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Ferns - Thickness
+        TextureQuality: 1
+        BoostSharpness: 1
     _meshImportSettings:
       _convertMeshes: 1
       _meshComplexity: 1
