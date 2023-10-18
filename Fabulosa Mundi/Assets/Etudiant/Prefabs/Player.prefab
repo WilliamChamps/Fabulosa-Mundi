@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2001533522}
   - component: {fileID: 2001533521}
   - component: {fileID: 2001533524}
+  - component: {fileID: 1617784572}
   m_Layer: 0
   m_Name: CameraFPS
   m_TagString: Untagged
@@ -28,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001533519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0010073185, y: 1.638863, z: 0.208}
+  m_LocalPosition: {x: 0.0010073185, y: 1.638863, z: 0.23199996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5649221705861256728}
-  m_RootOrder: 3
+  m_Father: {fileID: 8530192505531266061}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2001533523
 Camera:
@@ -133,6 +134,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MouseSensitivity: 200
   PlayerBody: {fileID: 5649221705861256728}
+--- !u!114 &1617784572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001533519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bd7f625e9df3341a44fa8758d2c817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reach: 3
+  layers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &16477015123338935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,12 +2140,15 @@ GameObject:
   m_Component:
   - component: {fileID: 5649221705861256728}
   - component: {fileID: 1363951104484771943}
+  - component: {fileID: 5857695275979586391}
   - component: {fileID: 8855944926195045932}
   - component: {fileID: 3136670535435159068}
   - component: {fileID: 9021462025417155670}
   - component: {fileID: 374363305342192429}
   - component: {fileID: 4564776213814516910}
   - component: {fileID: 251784814}
+  - component: {fileID: 251784822}
+  - component: {fileID: 251784823}
   m_Layer: 8
   m_Name: KnightErrant
   m_TagString: Player
@@ -2151,7 +2171,7 @@ Transform:
   - {fileID: 5649221705424208790}
   - {fileID: 6791338839569993579}
   - {fileID: 893059668369185160}
-  - {fileID: 2001533520}
+  - {fileID: 8530192505531266061}
   m_Father: {fileID: 5649221704163427687}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2175,6 +2195,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5857695275979586391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125351873915169897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655410304cebbf24e87e871bc9b737e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputs: []
 --- !u!143 &8855944926195045932
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2386,6 +2419,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CamNormal: {fileID: 3155107378623873878}
   CamFPS: {fileID: 2001533523}
+--- !u!114 &251784822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125351873915169897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4245550d7478842acce8b4ba1f079d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &251784823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125351873915169897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b568bf74a6e62a408bb0c91c50e8544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 999999999
+  healthDecreased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 251784822}
+        m_TargetAssemblyTypeName: StudioXP.Scripts.UI.EffectUIFunction, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PhysicalDamage
+          m_BoolArgument: 0
+        m_CallState: 2
+  healthReachedMin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2125351873915169897}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2216514069719281782
 GameObject:
   m_ObjectHideFlags: 0
@@ -6637,6 +6725,38 @@ Transform:
   m_Father: {fileID: 4715279879389348573}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5735246761850389812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8530192505531266061}
+  m_Layer: 8
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8530192505531266061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5735246761850389812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2001533520}
+  m_Father: {fileID: 5649221705861256728}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5771297026863341592
 GameObject:
   m_ObjectHideFlags: 0
@@ -9477,6 +9597,7 @@ GameObject:
   - component: {fileID: 39422035951062724}
   - component: {fileID: 7174081552945108925}
   - component: {fileID: 8711131138896224232}
+  - component: {fileID: 929813752}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -9617,6 +9738,22 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &929813752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319861392055245381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bd7f625e9df3341a44fa8758d2c817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reach: 3
+  layers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8376843306731367131
 GameObject:
   m_ObjectHideFlags: 0
