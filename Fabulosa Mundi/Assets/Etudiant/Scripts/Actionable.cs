@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Actionable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private UnityEvent onStartLookingAt;
+    [SerializeField] private UnityEvent onStopLookingAt;
+
+    [SerializeField] private UnityEvent onMainAction;
+    [SerializeField] private UnityEvent onSecondaryAction;
+
+    public void StartLookingAt()
     {
-        
+        onStartLookingAt.Invoke();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StopLookingAt()
     {
-        
+        onStopLookingAt.Invoke();
+    }
+
+    public void ActionateMainAction()
+    {
+        onMainAction.Invoke();
+    }
+
+    public void ActionateSecondaryAction()
+    {
+        onSecondaryAction.Invoke();
     }
 }

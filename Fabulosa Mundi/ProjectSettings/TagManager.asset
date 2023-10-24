@@ -7,6 +7,8 @@ TagManager:
   - PlayerHit
   - PlayerUse
   - UsableCollider
+  - CinemachineTarget
+  - CameraFPS
   layers:
   - Default
   - TransparentFX
